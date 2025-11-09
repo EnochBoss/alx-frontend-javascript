@@ -54,6 +54,13 @@ function createEmployee(salary: number | string): Director | Teacher {
   }
 }
 
+function createEmployee(salary: number | string): Director | Teacher {
+  if (typeof salary === 'number' && salary < 500) {
+    return new Teacher();
+  }
+  return new Director();
+}
+
 // Testing
 console.log(createEmployee(200).constructor.name); // Teacher
 console.log(createEmployee(1000).constructor.name); // Director
