@@ -103,3 +103,20 @@ function executeWork(employee: Director | Teacher): string {
 // Examples
 console.log(executeWork(createEmployee(200)));  // Getting to work
 console.log(executeWork(createEmployee(1000))); // Getting to director tasks
+
+// String literal type
+type Subjects = 'Math' | 'History';
+
+// teachClass function
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+  // Optional: TypeScript should already prevent invalid values
+}
+
+// Examples
+console.log(teachClass('Math'));     // Teaching Math
+console.log(teachClass('History'));  // Teaching History
