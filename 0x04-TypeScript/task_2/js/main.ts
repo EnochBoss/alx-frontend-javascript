@@ -105,7 +105,7 @@ console.log(executeWork(createEmployee(200)));  // Getting to work
 console.log(executeWork(createEmployee(1000))); // Getting to director tasks
 
 type Subjects = 'Math' | 'History';
-
+todayClass:Subjects
 function teachClass(todayClass: Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
