@@ -5,20 +5,15 @@ interface Teacher {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [key: string]: any; // allows extra properties like contract, etc.
+  [key: string]: any;
+}
+
+// Define the Directors interface that extends Teacher
+interface Directors extends Teacher {
+  numberOfReports: number;
 }
 
 // Example usage
-const teacher3: Teacher = {
-  firstName: 'John',
-  lastName: 'Doe',
-  fullTimeEmployee: false,
-  location: 'London',
-  contract: false,
-};
-
-console.log(teacher3);
-
 const director1: Directors = {
   firstName: 'John',
   lastName: 'Doe',
@@ -26,5 +21,5 @@ const director1: Directors = {
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
-console.log(director1);
 
+console.log(director1);
