@@ -42,24 +42,43 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// Function to create employees
-function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === 'number') {
-    return salary < 500 ? new Teacher() : new Director();
-  } else if (typeof salary === 'string') {
-    const numericSalary = Number(salary.replace('$', ''));
-    return numericSalary < 500 ? new Teacher() : new Director();
-  } else {
-    return new Teacher(); // default fallback
+class Director {
+  workFromHome(): string {
+    return 'Working from home';
+  }
+  getCoffeeBreak(): string {
+    return 'Getting a coffee break';
+  }
+  workDirectorTasks(): string {
+    return 'Getting to director tasks';
+  }
+}
+
+class Teacher {
+  workFromHome(): string {
+    return 'Cannot work from home';
+  }
+  getCoffeeBreak(): string {
+    return 'Cannot have a break';
+  }
+  workTeacherTasks(): string {
+    return 'Getting to work';
   }
 }
 
 function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === 'number' && salary < 500) {
-    return new Teacher();
+  if (typeof salary === 'string') {
+    salary = parseInt(salary);
   }
+  if (salary < 500) return new Teacher();
   return new Director();
 }
+
+// Examples
+console.log(createEmployee(200)); // Teacher
+console.log(createEmployee(1000)); // Director
+console.log(createEmployee('$500')); // Director
+
 
 // Testing
 console.log(createEmployee(200).constructor.name); // Teacher
