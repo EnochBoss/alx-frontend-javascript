@@ -107,16 +107,15 @@ console.log(executeWork(createEmployee(1000))); // Getting to director tasks
 // String literal type
 type Subjects = 'Math' | 'History';
 
-// teachClass function
+// teachClass function with proper typing
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
   } else if (todayClass === 'History') {
     return 'Teaching History';
   }
-  // Optional: TypeScript should already prevent invalid values
 }
 
-// Examples
+// Example usage
 console.log(teachClass('Math'));     // Teaching Math
 console.log(teachClass('History'));  // Teaching History
