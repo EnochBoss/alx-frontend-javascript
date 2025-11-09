@@ -5,10 +5,10 @@ interface Teacher {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [key: string]: any;
+  [key: string]: any; // allows additional properties
 }
 
-// Define the Directors interface that extends Teacher
+// Define the Directors interface extending Teacher
 interface Directors extends Teacher {
   numberOfReports: number;
 }
